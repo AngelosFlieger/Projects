@@ -1,0 +1,200 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(180deg, #0f022aff 0%, #2d1265ff 50%, #0f022aff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.debbyLedetJEYiaGwmkdkUnsplash1 {
+  position: absolute;
+  left: -205px;
+  top: 0;
+  width: 791px;
+  height: 1188px;
+  background-image: url('/assets/debbyLedetJEYiaGwmkdkUnsplash1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rectangle43 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 398px;
+  height: 800px;
+  background-image: linear-gradient(195.8deg, #000f 0%, #0000 50%, #000f 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.isPerforming {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 479px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.rOUND1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 90px;
+  top: 138px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.josephGonzalezIFgRcqHznqgUnspl {
+  position: absolute;
+  left: 130px;
+  top: 264px;
+  width: 127.6241px;
+  height: 133.8496px;
+  border-radius: 200px;
+  background-image: url('/assets/mamalakis.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* box-shadow: 0px 0px 0.2752px 0px #002aff, 0px 0px 0.5504px 0px #002aff, 0px 0px 1.9264px 0px #002aff,
+    0px 0px 3.8528px 0px #002aff, 0px 0px 6.6048px 0px #002aff, 0px 0px 11.5584px 0px #002aff; */
+}
+.nikos {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 130px;
+  top: 412.7518px;
+  width: 127.6241px;
+  height: 48.2481px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.vector {
+  position: absolute;
+  left: 44.3275%;
+  right: 43.9996%;
+  top: 47.2021%;
+  bottom: 47.7397%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 44.3275%;
+  right: 43.9996%;
+  top: 47.2021%;
+  bottom: 47.7397%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.lOGOALONECLEAR2 {
+  position: absolute;
+  left: 50%;
+  top: 36px;
+  width: 30px;
+  height: 44px;
+  background-image: url('/assets/lOGOALONECLEAR2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transform: translateX(-50%);
+}
+.vector2 {
+  position: absolute;
+  left: 7.7778%;
+  right: 86.6667%;
+  top: 6.25%;
+  bottom: 91.625%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 2.0715749263763428px #6801ad) drop-shadow(0px 0px 4.1431498527526855px #6801ad)
+    drop-shadow(0px 0px 14.501025199890137px #6801ad) drop-shadow(0px 0px 29.002050399780273px #6801ad)
+    drop-shadow(0px 0px 49.71780014038086px #6801ad) drop-shadow(0px 0px 87.00614929199219px #6801ad);
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

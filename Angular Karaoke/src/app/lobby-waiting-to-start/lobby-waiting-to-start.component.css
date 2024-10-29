@@ -1,0 +1,580 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(180deg, #0f022aff 0%, #2d1265ff 50%, #0f022aff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.maximBergM8HFXJ1btZ0Unsplash1 {
+  position: absolute;
+  left: -43px;
+  top: 0;
+  width: 449px;
+  height: 800px;
+  background-image: url('/assets/maximBergM8HFXJ1btZ0Unsplash1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rectangle43 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 398px;
+  height: 800px;
+  background-image: linear-gradient(195.8deg, #000f 0%, #0000 50%, #000f 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+._5 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 265px;
+  top: 117px;
+  width: 15px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.userRegular21 {
+  position: absolute;
+  left: 245px;
+  top: 116px;
+  width: 18px;
+  height: 22px;
+  flex-direction: column;
+  overflow: hidden;
+}
+.vector {
+  position: absolute;
+  left: 245px;
+  top: 115px;
+  overflow: visible;
+  filter: drop-shadow(0px 4px 0px #000);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lobby {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - 0.5px);
+  top: 108px;
+  width: 113px;
+  height: 37px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 3px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.wAITINGFORPLAYERS {
+  color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -3.5px);
+  top: 150px;
+  width: 111px;
+  height: 14px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl {
+  position: absolute;
+  left: 60px;
+  top: 230px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+.josephGonzalezIFgRcqHznqgUnsp2 {
+  position: absolute;
+  left: 260px;
+  top: 230px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/margot-robbie.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+
+.josephGonzalezIFgRcqHznqgUnsp3 {
+  position: absolute;
+  left: 60px;
+  top: 430px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/mamalakis.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+
+.nikos {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 218px;
+  top: 314px;
+  width: 82px;
+  height: 31px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.vector2 {
+  position: absolute;
+  left: 68.3333%;
+  right: 24.1667%;
+  top: 35.625%;
+  bottom: 61.125%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 68.3333%;
+  right: 24.1667%;
+  top: 35.625%;
+  bottom: 61.125%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.josephGonzalezIFgRcqHznqgUnspl2 {
+  position: absolute;
+  left: 59px;
+  top: 212px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl2.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #fff, 0px 0px 1.1008px 0px #fff, 0px 0px 3.8528px 0px #fff, 0px 0px 7.7056px 0px #fff,
+    0px 0px 13.2096px 0px #fff, 0px 0px 23.1168px 0px #fff;
+}
+.nikos2 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 59px;
+  top: 314px;
+  width: 82px;
+  height: 31px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.vector3 {
+  position: absolute;
+  left: 24.1667%;
+  right: 68.3333%;
+  top: 35.625%;
+  bottom: 61.125%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon3 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._32 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 24.1667%;
+  right: 68.3333%;
+  top: 35.625%;
+  bottom: 61.125%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.josephGonzalezIFgRcqHznqgUnspl3 {
+  position: absolute;
+  left: 59px;
+  top: 365px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl3.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #4d88d5, 0px 0px 1.1008px 0px #4d88d5, 0px 0px 3.8528px 0px #4d88d5,
+    0px 0px 7.7056px 0px #4d88d5, 0px 0px 13.2096px 0px #4d88d5, 0px 0px 23.1168px 0px #4d88d5;
+}
+.nikos3 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 59px;
+  top: 467px;
+  width: 82px;
+  height: 31px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.vector4 {
+  position: absolute;
+  left: 24.1667%;
+  right: 68.3333%;
+  top: 54.75%;
+  bottom: 42%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._33 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 24.1667%;
+  right: 68.3333%;
+  top: 54.75%;
+  bottom: 42%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.josephGonzalezIFgRcqHznqgUnspl4 {
+  position: absolute;
+  left: 59px;
+  top: 518px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl4.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.344px 0px #d400ff, 0px 0px 0.688px 0px #d400ff, 0px 0px 2.408px 0px #d400ff,
+    0px 0px 4.816px 0px #d400ff, 0px 0px 8.256px 0px #d400ff, 0px 0px 14.448px 0px #d400ff;
+}
+.nikos4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 59px;
+  top: 620px;
+  width: 82px;
+  height: 31px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.vector5 {
+  position: absolute;
+  left: 24.1667%;
+  right: 68.3333%;
+  top: 73.875%;
+  bottom: 22.875%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon5 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._34 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 24.1667%;
+  right: 68.3333%;
+  top: 73.875%;
+  bottom: 22.875%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.josephGonzalezIFgRcqHznqgUnspl5 {
+  position: absolute;
+  left: 218px;
+  top: 365px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl5.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #a14a4a, 0px 0px 1.1008px 0px #a14a4a, 0px 0px 3.8528px 0px #a14a4a,
+    0px 0px 7.7056px 0px #a14a4a, 0px 0px 13.2096px 0px #a14a4a, 0px 0px 23.1168px 0px #a14a4a;
+}
+.nikos5 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 218px;
+  top: 467px;
+  width: 82px;
+  height: 31px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.vector6 {
+  position: absolute;
+  left: 68.3333%;
+  right: 24.1667%;
+  top: 54.75%;
+  bottom: 42%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon6 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._35 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 68.3333%;
+  right: 24.1667%;
+  top: 54.75%;
+  bottom: 42%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+button {
+  position: absolute;
+  left: 125px;
+  top: 700px;
+  width: 152px;
+  height: 50px;
+  border-radius: 30px;
+  background-image: linear-gradient(270deg, #3800d8ff 0%, #9200c5ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  box-shadow: 0px 0px 0.7214px 0px #6801ad, 0px 0px 1.4428px 0px #6801ad, 0px 0px 5.0498px 0px #6801ad,
+    0px 0px 10.0996px 0px #6801ad, 0px 0px 17.3135px 0px #6801ad, 0px 0px 30.2987px 0px #6801ad;
+}
+.sTART {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 125px;
+  top: 700px;
+  width: 152px;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.cODE4532 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 174px;
+  width: 360px;
+  height: 25px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.bxArrowBack1 {
+  position: absolute;
+  left: 26px;
+  top: 43px;
+  width: 30px;
+  height: 30px;
+  flex-direction: column;
+  overflow: hidden;
+}
+.lOGOALONECLEAR2 {
+  position: absolute;
+  left: 50%;
+  top: 36px;
+  width: 30px;
+  height: 44px;
+  background-image: url('/assets/lOGOALONECLEAR2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateX(-50%);
+}
+.vector7 {
+  position: absolute;
+  left: 7.7778%;
+  right: 86.6667%;
+  top: 6.25%;
+  bottom: 91.625%;
+  overflow: visible;
+ 
+}
+.icon7 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

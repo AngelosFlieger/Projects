@@ -1,0 +1,183 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(180deg, #0f022aff 0%, #2d1265ff 50%, #0f022aff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.artworks00542905734Zc8bvzT500x {
+  position: absolute;
+  left: -283px;
+  top: 0;
+  width: 800px;
+  height: 800px;
+  background-image: url('/assets/drebc.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(4px);
+}
+.yOURCHOICE {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 63px;
+  top: 144px;
+  width: 234px;
+  height: 37px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 4px 0px #000;
+  flex-direction: column;
+}
+.madclip3 {
+  position: absolute;
+  left: 73px;
+  top: 212px;
+  width: 215px;
+  height: 215px;
+  background-image: url('/assets/DrDre.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 1.032px 0px #fff, 0px 0px 2.064px 0px #fff, 0px 0px 7.224px 0px #fff, 0px 0px 14.448px 0px #fff,
+    0px 0px 24.768px 0px #fff, 0px 0px 43.344px 0px #fff;
+}
+.kakesSinithiesMadClip {
+  position: absolute;
+  left: 73px;
+  top: 442px;
+  width: 152px;
+  height: 51px;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.textBlock {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock2 {
+  margin-top: 0;
+}
+.labelWrapper {
+  font-size: 12px;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label {
+  color: #fff6;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+button {
+  position: absolute;
+  left: 104px;
+  top: 554px;
+  width: 152px;
+  height: 50px;
+  border-radius: 30px;
+  background-image: linear-gradient(270deg, #3800d8ff 0%, #9200c5ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  box-shadow: 0px 0px 0.7214px 0px #6801ad, 0px 0px 1.4428px 0px #6801ad, 0px 0px 5.0498px 0px #6801ad,
+    0px 0px 10.0996px 0px #6801ad, 0px 0px 17.3135px 0px #6801ad, 0px 0px 30.2987px 0px #6801ad;
+}
+.nEXT {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 104px;
+  top: 554px;
+  width: 152px;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+}
+.lOGOALONECLEAR2 {
+  position: absolute;
+  left: 50%;
+  top: 36px;
+  width: 30px;
+  height: 44px;
+  background-image: url('/assets/lOGOALONECLEAR2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.vector {
+  position: absolute;
+  left: 7.7778%;
+  right: 86.6667%;
+  top: 6.25%;
+  bottom: 91.625%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 2.0715749263763428px #6801ad) drop-shadow(0px 0px 4.1431498527526855px #6801ad)
+    drop-shadow(0px 0px 14.501025199890137px #6801ad) drop-shadow(0px 0px 29.002050399780273px #6801ad)
+    drop-shadow(0px 0px 49.71780014038086px #6801ad) drop-shadow(0px 0px 87.00614929199219px #6801ad);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

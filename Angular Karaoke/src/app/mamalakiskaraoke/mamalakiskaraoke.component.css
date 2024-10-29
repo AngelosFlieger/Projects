@@ -1,0 +1,260 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(251.2deg, #9a56b2ff 0%, #5e36d0ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 800px; /* Set a maximum width if needed */
+    
+  }
+.rectangle15 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 120px;
+  background-color: #fff9;
+}
+.rollingInTheDeep {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 1069px;
+  top: 16px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.adele {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 1069px;
+  top: 63px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.singingNow {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 275px;
+  top: 17px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.nikos {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 276px;
+  top: 59px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.rectangle19 {
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 1920px;
+  height: 10px;
+  background-color: #959595;
+}
+.rectangle18 {
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 896px;
+  height: 10px;
+  background-color: #1a1d64;
+}
+.adele__Rolling_in_the_Deep1 {
+  position: absolute;
+  left: 939px;
+  top: 6px;
+  width: 100px;
+  height: 100px;
+  background-image: url('/assets/ioulia.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.thereSAFireStartingInMyHeartRe {
+  position: absolute;
+  left: 132px;
+  top: 82px;
+  width: 1636px;
+  height: 573px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 10px 0px #000;
+  flex-direction: column;
+}
+.labelWrapper {
+  font-size: 100px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label {
+  background-image: linear-gradient(-89.9deg, #4d2a97ff 0%, #ffff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.label2 {
+  color: #4d2a97;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock {
+  margin-top: 0;
+  color: #4d2a97;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textBlock2 {
+  margin-top: 0;
+  color: #4d2a97;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.josephGonzalezIFgRcqHznqgUnspl {
+  position: absolute;
+  left: 171px;
+  top: 6px;
+  width: 82px;
+  height: 86px;
+  border-radius: 200px;
+  background-image: url('/assets/mamalakis.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.2752px 0px #002aff, 0px 0px 0.5504px 0px #002aff, 0px 0px 1.9264px 0px #002aff,
+    0px 0px 3.8528px 0px #002aff, 0px 0px 6.6048px 0px #002aff, 0px 0px 11.5584px 0px #002aff;
+}
+.vector {
+  position: absolute;
+  left: 10.3646%;
+  right: 88.2292%;
+  top: 12.0611%;
+  bottom: 83.9695%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 10.3646%;
+  right: 88.2292%;
+  top: 12.0611%;
+  bottom: 83.9695%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}

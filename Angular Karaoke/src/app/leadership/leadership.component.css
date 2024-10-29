@@ -1,0 +1,483 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(251.2deg, #9a56b2ff 0%, #5e36d0ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.ranking {
+  color: #fff;
+  font-size: 55px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -0.5px);
+  top: 51px;
+  width: 315px;
+  height: 51px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 7px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+._9 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left:965px;
+  top: 459px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 7px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.nikos {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - 653px);
+  top: 449px;
+  width: 236px;
+  height: 60px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 6px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl {
+  position: absolute;
+  left: 849px;
+  top: 177px;
+  width: 235.6412px;
+  height: 247.1358px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #c251aa, 0px 0px 1.1008px 0px #c251aa, 0px 0px 3.8528px 0px #c251aa,
+    0px 0px 7.7056px 0px #c251aa, 0px 0px 13.2096px 0px #c251aa, 0px 0px 23.1168px 0px #c251aa;
+}
+.vector {
+  position: absolute;
+  left: 14.235%;
+  right: 82.2745%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 14.235%;
+  right: 82.2745%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+._65 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -652px);
+  top: 509px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 7px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.nikos2 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -653px);
+  top: 449px;
+  width: 236px;
+  height: 60px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 6px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl2 {
+  position: absolute;
+  left: 1495px;
+  top: 177px;
+  width: 235.6412px;
+  height: 247.1358px;
+  border-radius: 200px;
+  background-image: url('/assets/margot-robbie.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #c251aa, 0px 0px 1.1008px 0px #c251aa, 0px 0px 3.8528px 0px #c251aa,
+    0px 0px 7.7056px 0px #c251aa, 0px 0px 13.2096px 0px #c251aa, 0px 0px 23.1168px 0px #c251aa;
+}
+.vector2 {
+  position: absolute;
+  left: 82.2558%;
+  right: 14.2537%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._32 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 82.2558%;
+  right: 14.2537%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+._75 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -326px);
+  top: 509px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 7px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.nikos3 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -327px);
+  top: 449px;
+  width: 236px;
+  height: 60px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 6px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl3 {
+  position: absolute;
+  left: 1169px;
+  top: 177px;
+  width: 235.6412px;
+  height: 247.1358px;
+  border-radius: 200px;
+  background-image: url('/assets/mamalakis.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #c251aa, 0px 0px 1.1008px 0px #c251aa, 0px 0px 3.8528px 0px #c251aa,
+    0px 0px 7.7056px 0px #c251aa, 0px 0px 13.2096px 0px #c251aa, 0px 0px 23.1168px 0px #c251aa;
+}
+.vector3 {
+  position: absolute;
+  left: 65.2767%;
+  right: 31.2328%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon3 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._33 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 65.2767%;
+  right: 31.2328%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+._82 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - 326.5px);
+  top: 459px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 7px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.nikos4 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - 326px);
+  top: 451px;
+  width: 236px;
+  height: 60px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 6px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl4 {
+  position: absolute;
+  left: 516px;
+  top: 179px;
+  width: 235.6412px;
+  height: 247.1358px;
+  border-radius: 200px;
+  background-image: url('/assets/margot-robbie.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #c251aa, 0px 0px 1.1008px 0px #c251aa, 0px 0px 3.8528px 0px #c251aa,
+    0px 0px 7.7056px 0px #c251aa, 0px 0px 13.2096px 0px #c251aa, 0px 0px 23.1168px 0px #c251aa;
+}
+.vector4 {
+  position: absolute;
+  left: 31.2663%;
+  right: 65.2433%;
+  top: 59.0133%;
+  bottom: 31.0851%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._34 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 31.2663%;
+  right: 65.2433%;
+  top: 59.0133%;
+  bottom: 31.0851%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+._76 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 1290px;
+  top: 459px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 7px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.nikos5 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 449px;
+  width: 236px;
+  height: 60px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 6px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl5 {
+  position: absolute;
+  left: 842px;
+  top: 177px;
+  width: 235.6412px;
+  height: 247.1358px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl5.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #c251aa, 0px 0px 1.1008px 0px #c251aa, 0px 0px 3.8528px 0px #c251aa,
+    0px 0px 7.7056px 0px #c251aa, 0px 0px 13.2096px 0px #c251aa, 0px 0px 23.1168px 0px #c251aa;
+}
+.vector5 {
+  position: absolute;
+  left: 48.2454%;
+  right: 48.2641%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon5 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._35 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 48.2454%;
+  right: 48.2641%;
+  top: 58.708%;
+  bottom: 31.3904%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}

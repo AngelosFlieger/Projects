@@ -1,0 +1,203 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(190.4deg, #fff0 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.rectangle6 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  background-color: #000;
+}
+.adele__Rolling_in_the_Deep2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1958.9999px;
+  height: 1080px;
+  background-image: url('/assets/adele__Rolling_in_the_Deep2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(35px);
+}
+.lines {
+  position: absolute;
+  left: 173px;
+  top: 579px;
+  width: 1573px;
+  height: 54px;
+  overflow: visible;
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._211871_pause_icon1 {
+  position: absolute;
+  left: 886px;
+  top: 686px;
+  width: 148px;
+  height: 148px;
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3669229_skip_ic_next_icon1 {
+  position: absolute;
+  left: 1189px;
+  top: 676px;
+  width: 169px;
+  height: 169px;
+}
+.icon3 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3669228_skip_previous_ic_icon1 {
+  position: absolute;
+  left: 561px;
+  top: 676px;
+  width: 169px;
+  height: 169px;
+}
+.icon4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.adele__Rolling_in_the_Deep3 {
+  position: absolute;
+  left: 173px;
+  top: 236px;
+  width: 300px;
+  height: 300px;
+  outline: solid 3px #f9ebeb;
+  outline-offset: -3px;
+  border-radius: 60px;
+  background-image: url('/assets/adele__Rolling_in_the_Deep3.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 4px 200px 0px #00000040;
+}
+.rollingInTheDeep {
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 515px;
+  top: 277px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 100px #00000040;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.adele {
+  color: #fff;
+  font-size: 37px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 516px;
+  top: 345px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 100px #00000040;
+  white-space: nowrap;
+  flex-direction: column;
+}
+._10353 {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 532px;
+  top: 470px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 250px #00000040;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.hintYouCanSkipPlayPauseWithGes {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 926px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 4px 4px #00000040;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}

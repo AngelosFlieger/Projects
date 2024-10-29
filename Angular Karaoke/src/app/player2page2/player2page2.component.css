@@ -1,0 +1,272 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.dylanSauerweinUnN8fIOhqLcUnspl {
+  position: absolute;
+  left: -78px;
+  top: 0;
+  width: 566px;
+  height: 800px;
+  background-image: url('/assets/dylanSauerweinUnN8fIOhqLcUnspl.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rectangle43 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 395px;
+  height: 800px;
+  background-image: linear-gradient(195.8deg, #000f 0%, #0000 50%, #000f 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.rectangle32 {
+  position: absolute;
+  left: 50px;
+  top: 253px;
+  width: 67px;
+  height: 84px;
+  background-color: #bea4f6bf;
+ 
+}
+.rectangle33 {
+  position: absolute;
+  right: 24px;
+  top: 253px;
+  width: 67px;
+  height: 84px;
+  background-color: #bea4f6bf;
+ 
+}
+.rectangle34 {
+  position: absolute;
+  right: 106px;
+  top: 253px;
+  width: 67px;
+  height: 84px;
+  background-color: #bea4f6bf;
+ 
+}
+.rectangle35 {
+  position: absolute;
+  right: 189px;
+  top: 253px;
+  width: 67px;
+  height: 84px;
+  background-color: #bea4f6bf;
+ 
+}
+.rectangle36 {
+  position: absolute;
+  left: 27px;
+  top: 381px;
+  width: 138px;
+  height: 3px;
+  background-color: #bea4f6;
+}
+.rectangle37 {
+  position: absolute;
+  left: 194px;
+  top: 381px;
+  width: 138px;
+  height: 3px;
+  background-color: #bea4f6;
+}
+.or {
+  color: #bea4f6;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 170px;
+  top: 374px;
+  width: 21px;
+  height: 16px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.vector {
+  position: absolute;
+  left: calc(50% - 1.3333px);
+  top: 481px;
+  width: 83.3333px;
+  height: 83.3333px;
+  overflow: visible;
+  filter: drop-shadow(0px 4px 4px #00000040);
+  transform: translateX(-50%);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tYPECODE {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 211px;
+  width: 360px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.sCANQRCODE {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 425px;
+  width: 360px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.clickHere {
+  color: #bea4f6;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 137px;
+  top: 569.6666px;
+  width: 84px;
+  height: 15px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 4px 4px #00000040;
+  flex-direction: column;
+}
+.jOINGAME {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  width: 128px;
+  height: 41px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 2px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+button.first {
+  position: absolute;
+  left: 120px;
+  top: 643px;
+  width: 141px;
+  height: 43px;
+  border-radius: 30px;
+  background-image: linear-gradient(270deg, #3800d8ff 0%, #9200c5ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  box-shadow: 0px 0px 0.564px 0px #6801ad, 0px 0px 1.128px 0px #6801ad, 0px 0px 3.948px 0px #6801ad,
+    0px 0px 7.896px 0px #6801ad, 0px 0px 13.536px 0px #6801ad, 0px 0px 23.6881px 0px #6801ad;
+}
+.sUBMIT {
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 120px;
+  top: 643px;
+  width: 141px;
+  height: 43px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.vector2 {
+  position: absolute;
+  left: 7.7778%;
+  right: 86.6667%;
+  top: 6.25%;
+  bottom: 91.625%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 2.0715749263763428px #6801ad) drop-shadow(0px 0px 4.1431498527526855px #6801ad)
+    drop-shadow(0px 0px 14.501025199890137px #6801ad) drop-shadow(0px 0px 29.002050399780273px #6801ad)
+    drop-shadow(0px 0px 49.71780014038086px #6801ad) drop-shadow(0px 0px 87.00614929199219px #6801ad);
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

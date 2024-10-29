@@ -1,0 +1,159 @@
+/* receiver.component.css */
+
+.page-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  
+  /* You can add additional styling based on your design preferences */
+  :host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: linear-gradient(251.2deg, #9a56b2ff 0%, #5e36d0ff 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.sCORE {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -0.5px);
+  top: 439px;
+  width: 263px;
+  height: 51px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 7px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+._7510 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -0.5px);
+  top: 513px;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 7px 0px #000;
+  white-space: nowrap;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
+.josephGonzalezIFgRcqHznqgUnspl {
+  position: absolute;
+  left: 843px;
+  top: 142px;
+  width: 235.6412px;
+  height: 247.1358px;
+  border-radius: 200px;
+  background-image: url('/assets/josephGonzalezIFgRcqHznqgUnspl.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 0.5504px 0px #c251aa, 0px 0px 1.1008px 0px #c251aa, 0px 0px 3.8528px 0px #c251aa,
+    0px 0px 7.7056px 0px #c251aa, 0px 0px 13.2096px 0px #c251aa, 0px 0px 23.1168px 0px #c251aa;
+}
+.vector {
+  position: absolute;
+  left: 48.2975%;
+  right: 48.212%;
+  top: 53.3645%;
+  bottom: 36.734%;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 0.19439999759197235px #fdffa3) drop-shadow(0px 0px 0.3887999951839447px #fdffa3)
+    drop-shadow(0px 0px 1.36080002784729px #fdffa3) drop-shadow(0px 0px 2.72160005569458px #fdffa3)
+    drop-shadow(0px 0px 4.665599822998047px #fdffa3) drop-shadow(0px 0px 8.164799690246582px #fdffa3);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+._3 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 48.2975%;
+  right: 48.212%;
+  top: 53.3645%;
+  bottom: 36.734%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 1px 0px #000;
+  flex-direction: column;
+}
+.nikos {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: LEMON MILK, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: calc(50% - -1px);
+  top: 60px;
+  width: 236px;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  text-shadow: 0px 6px 0px #000;
+  flex-direction: column;
+  transform: translateX(-50%);
+}
