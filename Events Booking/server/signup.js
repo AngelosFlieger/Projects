@@ -4,26 +4,69 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 require('./UserDetails');
 const User = mongoose.model("UserInfo");
+const axios = require('axios'); // ✅ move axios outside the route
+
+async function validateCity(input) {
+  const response = await axios.get('https://nominatim.openstreetmap.org/search', {
+    params: {
+      q: input,
+      format: 'json',
+      limit: 1,
+      addressdetails: 1 // 👈 ensures 'address' is returned
+    }
+  });
+
+  if (response.data.length === 0) return null;
+
+  const match = response.data[0];
+  const address = match.address || {};
+
+  // Get the most specific city-like field available
+  const cityName = address.city || address.town || address.village;
+
+  return cityName || null;
+}
+
+
 
 router.post('/signup', async (req, res) => {
-    const { email, password } = req.body;
+  const { email, password, name, city: rawCity, gender, age } = req.body;
 
-    const oldUser = await User.findOne({ email: email }).collation({ locale: 'en', strength: 2 });
-    if (oldUser) {
-        return res.send({ data: "User already exists!" });
-    }
-    
-    const encryptedPassword = await bcrypt.hash(password, 10);
+  // ✅ Check for required fields first (use rawCity!)
+  if (!email || !password || !name || !rawCity || !gender) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
 
-    try {
-        await User.create({
-            email: email,
-            password: encryptedPassword,
-        });
-        res.send({ status: "ok", data: "User Created" })
-    } catch (error) {
-        res.send({ status: "error", data: error })
+  // ✅ Validate city with API
+  const verifiedCity = await validateCity(rawCity);
+  if (!verifiedCity) {
+    return res.status(400).json({ error: 'City not found. Please enter a valid city.' });
+  }
+
+  try {
+    const existingUser = await User.findOne({ email }).collation({ locale: 'en', strength: 2 });
+    if (existingUser) {
+      return res.status(400).json({ error: 'User already exists' });
     }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      email,
+      name,
+      password: hashedPassword,
+      city: verifiedCity, // ✅ Matched city
+      gender,
+      age: parseInt(age) || null,
+    });
+
+    await newUser.save();
+    res.status(201).json({ status: 'ok', message: 'User created' });
+
+  } catch (error) {
+    console.error('Signup error:', error);
+    res.status(500).json({ error: 'Server error during signup' });
+  }
 });
 
 module.exports = router;

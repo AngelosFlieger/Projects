@@ -1,149 +1,421 @@
-import React, { useState } from 'react';
-import { ScrollView, Button, View, TextInput, Text, Alert, StyleSheet, Image } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import axios from 'axios';
+import React, { useState } from "react";
+import {
+  ScrollView,
+  View,
+  Text,
+  TextInput,
+  Alert,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  KeyboardAvoidingView,
+} from "react-native";
+import { Picker } from "@react-native-picker/picker";
+import DateTimePicker from "@react-native-community/datetimepicker";
+import * as DocumentPicker from "expo-document-picker";
+import axios from "axios";
+import { useAuth } from "../AuthContext";
+import { Image } from "expo-image";
+import { useNavigation } from "@react-navigation/native";
+import { BackIcon } from "./components/Icons"; // Adjust path if needed
 
 export default function AdminScreen() {
-  const [title, setTitle] = useState<string>('');  // Explicitly set title type
-  const [description, setDescription] = useState<string>('');  // Explicitly set description type
-  const [price, setPrice] = useState<string>('');
-  const [image, setImage] = useState<string | null>(null);  // Explicitly set image type
+  const { serverIP } = useAuth();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
+  const [startPrice, setStartPrice] = useState("");
+  const [type, setType] = useState("entertainment");
+  const [image, setImage] = useState(null);
+  const [dateTime, setDateTime] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [city, setCity] = useState("");
+  const [seatNum, setSeatNum] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const navigation = useNavigation();
 
-  // Function to pick an image
   const pickImage = async () => {
-    // Request permission to access the image library
-    const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-
-    if (permissionResult.granted === false) {
-      Alert.alert("Permission to access camera roll is required!");
-      return;
+    try {
+      const result = await DocumentPicker.getDocumentAsync({
+        type: "image/*",
+        copyToCacheDirectory: true,
+        multiple: false,
+      });
+      if (result.canceled) return;
+      const uploadedUrl = await uploadImage(result.assets[0].uri);
+      if (uploadedUrl) setImage(uploadedUrl);
+    } catch (error) {
+      Alert.alert("Error", "Failed to select image.");
     }
+  };
 
-    // Launch the image picker
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      quality: 0.7,
-    });
-
-    // Check if the user canceled the operation
-    if (result.canceled) {
-      return; // If canceled, just return
+  const uploadImage = async (uri) => {
+    try {
+      const formData = new FormData();
+      formData.append("image", {
+        uri,
+        name: "photo.jpg",
+        type: "image/jpeg",
+      });
+      const response = await axios.post(`${serverIP}/uploadImage`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      return response.data.imageUrl;
+    } catch (error) {
+      console.error("Upload failed", error);
+      return null;
     }
+  };
 
-    // If the user did not cancel the operation, set the image URI
-    setImage(result.assets[0].uri); // Access the first asset's URI
+  const getCoordinates = async (location) => {
+    try {
+      const response = await axios.get(
+        "https://nominatim.openstreetmap.org/search",
+        {
+          params: {
+            q: location,
+            format: "json",
+            limit: 1,
+          },
+        }
+      );
+
+      if (response.data.length === 0) throw new Error("Invalid location");
+
+      const { lat, lon } = response.data[0];
+      return { lat, lon };
+    } catch (error) {
+      Alert.alert("Error", "Invalid location! Please enter a valid address.");
+      return null;
+    }
   };
 
   const submitForm = async () => {
-    if (!title || !description) {
-        Alert.alert('Error', 'Title and description are required!');
-        return;
+    if (
+      !title ||
+      !description ||
+      !location ||
+      !startPrice ||
+      !priceMin ||
+      !priceMax
+    ) {
+      Alert.alert("Error", "Please fill all required fields!");
+      return;
     }
+
+    const coordinates = await getCoordinates(location);
+    if (!coordinates) return;
 
     try {
-        const formData = new FormData();
-        formData.append('title', title);
-        formData.append('description', description);
-        formData.append('price', price);
+      const formData = {
+        title,
+        description,
+        location,
+        city,
+        type,
+        price_min: Number(priceMin),
+        price_max: Number(priceMax),
+        price: Number(startPrice),
+        seat_num: Number(seatNum),
+        date: dateTime.toISOString().split("T")[0],
+        time: dateTime.toISOString().split("T")[1].substring(0, 5),
+        imageUrl: image,
+        lat: coordinates.lat,
+        lon: coordinates.lon,
+        status: "running",
+      };
 
-        // Append the image if it exists
-        if (image) {
-            const uriParts = image.split('.');
-            const fileType = uriParts[uriParts.length - 1];
-
-            // Create a File object compatible with FormData
-            const fileToUpload = {
-                uri: image,
-                name: `photo.${fileType}`, // Create a name for the file
-                type: `image/${fileType}`, // Set the correct MIME type
-            };
-
-            formData.append('image', fileToUpload); // Append the image to FormData
-        }
-
-        // Log the FormData object for debugging
-        console.log('FormData Object:', formData);
-
-        // Make a POST request to your backend
-        const response = await axios.post('http://192.168.2.6:5001/eventRoute', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-
-        console.log('Response:', response.data); // Log the response data
-        Alert.alert('Success', 'Event created successfully!');
-        // Reset the form fields
-        setTitle('');
-        setDescription('');
-        setPrice('');
-        setImage(null);
+      await axios.post(`${serverIP}/eventRoute`, formData);
+      Alert.alert("Success", "Event created successfully!");
     } catch (error) {
-        console.error('Error:', error.response || error.message); // Log the error
-        Alert.alert('Error', 'Something went wrong while uploading!');
+      console.error(error);
+      Alert.alert("Error", "Something went wrong.");
     }
-};
-
+  };
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps={"handled"}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Create Event</Text>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ flex: 1 }}
+    >
+      <ScrollView
+        style={styles.wrapper}
+        contentContainerStyle={styles.container}
+      >
+        <View style={styles.header}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={styles.backButtonWrapper}
+          >
+            <BackIcon size={24} color="#e8eaed" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>New Event</Text>
+        </View>
+
+        <Text style={styles.label}>Title</Text>
         <TextInput
+          style={styles.input}
           placeholder="Enter Title"
+          placeholderTextColor="#aaa"
           value={title}
           onChangeText={setTitle}
-          style={styles.input}
         />
+
+        <Text style={styles.label}>Cover photo</Text>
+        <TouchableOpacity style={styles.uploadBox} onPress={pickImage}>
+          {image ? (
+            <Image
+              source={{ uri: image }}
+              style={styles.uploadedImage}
+              contentFit="cover"
+            />
+          ) : (
+            <Text style={styles.browseText}>Browse files</Text>
+          )}
+        </TouchableOpacity>
+
+        <Text style={styles.label}>Description</Text>
         <TextInput
-          placeholder="Enter Description"
+          style={[styles.input, { height: 100, textAlignVertical: "top" }]}
+          multiline
+          placeholder="type here..."
+          placeholderTextColor="#aaa"
           value={description}
           onChangeText={setDescription}
-          style={styles.input}
-          multiline
         />
+
+        <Text style={styles.label}>Date/ time</Text>
+        <TouchableOpacity
+          style={styles.input}
+          onPress={() => setShowDatePicker(true)}
+        >
+          <Text style={{ color: "#fff" }}>
+            {dateTime.toISOString().substring(0, 16).replace("T", " ")}
+          </Text>
+        </TouchableOpacity>
+        {showDatePicker && (
+          <DateTimePicker
+            value={dateTime}
+            mode="datetime"
+            display={Platform.OS === "ios" ? "spinner" : "default"}
+            onChange={(event, selectedDate) => {
+              setShowDatePicker(false);
+              if (selectedDate) setDateTime(selectedDate);
+            }}
+          />
+        )}
+
+        <Text style={styles.label}>Type</Text>
+        <TouchableOpacity
+          style={styles.dropdownWrapper}
+          onPress={() => setShowDropdown(!showDropdown)}
+        >
+          <Text style={styles.dropdownText}>{type}</Text>
+        </TouchableOpacity>
+
+        {showDropdown && (
+          <View style={styles.dropdownMenu}>
+            {["music", "entertainment", "sport", "other"].map((item) => (
+              <TouchableOpacity
+                key={item}
+                onPress={() => {
+                  setType(item);
+                  setShowDropdown(false);
+                }}
+                style={styles.dropdownItem}
+              >
+                <Text style={styles.dropdownItemText}>{item}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
+
+        <Text style={styles.label}>Location</Text>
         <TextInput
-          placeholder="Enter Price"
-          value={price}
-          onChangeText={setPrice}
           style={styles.input}
-          multiline
+          placeholder="Enter Location"
+          placeholderTextColor="#aaa"
+          value={location}
+          onChangeText={setLocation}
         />
-        <Button title="Pick an Image" onPress={pickImage} />
-        {image && <Image source={{ uri: image }} style={styles.image} />}
-        <Button title="Submit" onPress={submitForm} />
-      </View>
-    </ScrollView>
+        <Text style={styles.label}>City</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter City"
+          placeholderTextColor="#aaa"
+          value={city}
+          onChangeText={setCity}
+        />
+
+        <Text style={styles.label}>Number of Seats</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter seat number"
+          keyboardType="numeric"
+          placeholderTextColor="#aaa"
+          value={seatNum}
+          onChangeText={setSeatNum}
+        />
+
+        <Text style={styles.label}>Pricing</Text>
+        <View style={styles.priceRow}>
+          <TextInput
+            style={[styles.input, styles.priceInput]}
+            placeholder="Start price"
+            keyboardType="numeric"
+            placeholderTextColor="#aaa"
+            value={startPrice}
+            onChangeText={setStartPrice}
+          />
+          <TextInput
+            style={[styles.input, styles.priceInput]}
+            placeholder="Minimum price"
+            keyboardType="numeric"
+            placeholderTextColor="#aaa"
+            value={priceMin}
+            onChangeText={setPriceMin}
+          />
+          <TextInput
+            style={[styles.input, styles.priceInput]}
+            placeholder="Max price"
+            keyboardType="numeric"
+            placeholderTextColor="#aaa"
+            value={priceMax}
+            onChangeText={setPriceMax}
+          />
+        </View>
+
+        <TouchableOpacity style={styles.submitBtn} onPress={submitForm}>
+          <Text style={styles.submitText}>Create</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
-// Basic styles for the component
 const styles = StyleSheet.create({
-  container: {
+  wrapper: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#282c34',
-    padding: 20,
+    backgroundColor: "#111111",
   },
-  title: {
-    fontSize: 24,
-    color: 'white',
+  container: {
+    flexGrow: 1,
+    padding: 20,
+    paddingBottom: 40,
+    backgroundColor: "#111111",
+  },
+  heading: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
     marginBottom: 20,
+    marginTop: 40,
+  },
+  label: {
+    color: "#fff",
+    fontSize: 14,
+    marginBottom: 6,
+    marginTop: 10,
   },
   input: {
-    height: 40,
-    borderColor: 'white',
-    borderWidth: 1,
-    marginBottom: 15,
-    paddingHorizontal: 10,
-    color: 'white',
-    width: '100%',
+    backgroundColor: "#1E1C21",
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    color: "#fff",
+    marginBottom: 10,
   },
-  image: {
-    width: 200,
-    height: 200,
-    marginVertical: 15,
+  uploadBox: {
+    borderWidth: 1,
+    borderColor: "#fff",
+    borderRadius: 10,
+    height: 160,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 15,
+  },
+  browseText: {
+    color: "#CAFD00",
+    fontSize: 14,
+  },
+  uploadedImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 10,
+  },
+  picker: {
+    color: "#fff",
+    backgroundColor: "#1E1C21",
+    borderRadius: 8,
+  },
+  priceRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 10,
+  },
+  priceInput: {
+    flex: 1,
+  },
+  submitBtn: {
+    marginTop: 20,
+    backgroundColor: "#CAFD00",
+    borderRadius: 10,
+    paddingVertical: 15,
+    alignItems: "center",
+  },
+  submitText: {
+    color: "#111111",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  dropdownWrapper: {
+    backgroundColor: "#1E1C21",
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginBottom: 10,
+  },
+  dropdownText: {
+    color: "#fff",
+  },
+  dropdownMenu: {
+    backgroundColor: "#1E1C21",
+    borderRadius: 8,
+    marginBottom: 15,
+    paddingVertical: 5,
+  },
+  dropdownItem: {
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  dropdownItemText: {
+    color: "#fff",
+  },
+  header: {
+    width: "100%",
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    marginBottom: 10,
+    marginTop: 20,
+  },
+  backButtonWrapper: {
+    position: "absolute",
+    left: 0,
+    top: "50%",
+    transform: [{ translateY: -12 }],
+    paddingLeft: 10,
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff",
+    position: "absolute",
+    left: "50%",
+    transform: [{ translateX: -50 }],
   },
 });

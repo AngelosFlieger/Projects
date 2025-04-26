@@ -1,10 +1,14 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
-const UserDetailSchema = new mongoose.Schema({
-    email: { type: String, unique: true },
-    password: String,
-}, {
-    collation: "UserInfo"
+const UserSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  name: { type: String, required: true }, // ✅ Added name field
+  password: { type: String, required: true },
+  city: { type: String, required: true },
+  gender: { type: String, required: true, enum: ['Male', 'Female', 'Other'] },
+  age: { type: Number }
 });
 
-mongoose.model("UserInfo", UserDetailSchema)
+const User = mongoose.model("UserInfo", UserSchema);
+
+module.exports = User;

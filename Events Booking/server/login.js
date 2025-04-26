@@ -9,27 +9,30 @@ const JWT_SECRET = "cbdkhbfehvfhjvehj()w2u43734gy33f48[][uy34843tfogfruyg3487";
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const oldUser = await User.findOne({ email: email }).collation({ locale: 'en', strength: 2 });
 
-    if (!oldUser) {
-        return res.send({ data: "User doesn't exist!" });
+    const user = await User.findOne({ email: email }).collation({ locale: 'en', strength: 2 });
+    if (!user) {
+        return res.status(404).json({ error: "User not found" });
     }
 
-    const isPasswordValid = await bcrypt.compare(password, oldUser.password);
-    
+    const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-        return res.send({ status: "error", data: "Wrong password" });
+        return res.status(401).json({ error: "Incorrect password" });
     }
 
-    if (await bcrypt.compare(password, oldUser.password)) {
-        const token = jwt.sign({ email: oldUser.email }, JWT_SECRET);
-
-        if (res.status(201)) {
-            return res.send({ status: "ok", data: token });
-        } else {
-            return res.send({ status: "error", data: error });
+    // ✅ Return full user data
+    res.json({
+        status: "ok",
+        user: {
+            _id: user._id,
+            email: user.email,
+            city: user.city,
+            gender: user.gender,
+            name: user.name,  
+            age: user.age,
         }
-    }
+    });
 });
+
 
 module.exports = router;

@@ -1,162 +1,257 @@
-import React, { useEffect, useState } from 'react';
-import { ScrollView, View, Text, StyleSheet, Alert, RefreshControl, Button } from 'react-native';
-import axios from 'axios';
-import { Image } from 'expo-image'; // Import from expo-image
-
-interface Event {
-  _id: string;
-  title: string;
-  description: string;
-  price: string;
-  imageUrl: string;
-}
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  RefreshControl,
+  TextInput,
+  Alert,
+  FlatList,
+} from "react-native";
+import axios from "axios";
+import { Image } from "expo-image";
+import { useNavigation, CommonActions } from "@react-navigation/native";
+import { useAuth } from "../AuthContext";
+import { SearchIcon, LogoutIcon } from "./components/Icons";
 
 export default function EventListingScreen() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [refreshing, setRefreshing] = useState<boolean>(false);
+  const { serverIP, setUser } = useAuth();
+  const navigation = useNavigation();
+  const [events, setEvents] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Fetch events from the backend
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://192.168.2.6:5001/eventRoute');
-      setEvents(response.data);
+      const response = await axios.get(`${serverIP}/eventRoute`);
+      setEvents(response.data.filter((event) => event.status === "running"));
     } catch (error) {
-      console.error('Error fetching events:', error);
-      Alert.alert('Error', 'Could not fetch events.');
+      console.error("Error fetching events:", error);
     } finally {
-      setLoading(false);
+      setRefreshing(false);
     }
   };
 
-  // Function to delete an event
-  const deleteEvent = async (eventId: string) => {
-    try {
-      console.log(`Deleting event with ID: ${eventId}`); // Logging event ID
-
-      const response = await axios.delete(`http://192.168.2.6:5001/eventRoute/${eventId}`);
-      console.log('Delete response:', response.data); // Log response from backend
-
-      // Filter out the deleted event from the state
-      setEvents(events.filter((event) => event._id !== eventId));
-      Alert.alert('Success', 'Event deleted successfully');
-    } catch (error) {
-      console.error('Error deleting event:', error.response || error.message);
-      Alert.alert('Error', 'Could not delete the event.');
-    }
-  };
-
-  // Fetch events when the component mounts
   useEffect(() => {
     fetchEvents();
   }, []);
 
-  const onRefresh = async () => {
-    setRefreshing(true);
-    await fetchEvents();
-    setRefreshing(false);
+  const handleEventClick = (event) => {
+    navigation.navigate("EventViewsScreen", { event });
   };
 
-  if (loading) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Loading events...</Text>
-      </View>
-    );
-  }
+  const handleLogout = () => {
+    Alert.alert("Logout", "Are you sure you want to log out?", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Yes",
+        onPress: () => {
+          setUser(null);
+          navigation.dispatch(
+            CommonActions.reset({
+              index: 0,
+              routes: [{ name: "index" }],
+            })
+          );
+        },
+      },
+    ]);
+  };
+
+  const handleSearch = () => {
+    navigation.navigate("SearchResultsScreen", { query: searchQuery });
+  };
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.container}
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-    >
-      <Text style={styles.title}>Event Listings</Text>
-      {events.length > 0 ? (
-        events.map((event) => (
-          <View key={event._id} style={styles.eventCard}>
-            <Text style={styles.eventTitle}>{event.title}</Text>
-            <Text style={styles.eventDescription}>{event.description}</Text>
-            <Text style={styles.eventPrice}>{event.price}</Text>
-            {event.imageUrl && (
+    <View style={{ flex: 1, backgroundColor: "#111111" }}>
+      {/* Sticky header */}
+      <View style={styles.fixedHeader}>
+        <View style={styles.headerWrapper}>
+          <View style={{ flex: 1, alignItems: "center" }}>
+            <Text style={styles.title}>Dashboard</Text>
+          </View>
+          <TouchableOpacity onPress={handleLogout}>
+            <LogoutIcon size={18} color="red" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.searchBox}>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search events..."
+            placeholderTextColor="#888"
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            returnKeyType="done"
+            onSubmitEditing={handleSearch}
+          />
+          <TouchableOpacity onPress={handleSearch}>
+            <SearchIcon size={20} color="#fff" />
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity
+          style={styles.newEventButton}
+          onPress={() => navigation.navigate("createEvent")}
+        >
+          <Text style={styles.newEventText}>Add new event</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Scrollable list */}
+      <ScrollView
+        style={styles.scrollArea}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={fetchEvents} />
+        }
+      >
+        <Text style={styles.subtitle}>{events.length} active events</Text>
+
+        <View style={styles.gridWrapper}>
+          {events.map((event) => (
+            <TouchableOpacity
+              key={event._id}
+              style={styles.card}
+              onPress={() => handleEventClick(event)}
+            >
               <Image
                 source={{ uri: event.imageUrl }}
-                style={styles.eventImage}
+                style={styles.image}
                 contentFit="cover"
-                placeholder={require('../../assets/images/placeholder.png')}
               />
-            )}
-            <Button
-              title="Delete"
-              color="red"
-              onPress={() => {
-                Alert.alert(
-                  'Confirm Delete',
-                  'Are you sure you want to delete this event?',
-                  [
-                    { text: 'Cancel', style: 'cancel' },
-                    {
-                      text: 'Delete',
-                      onPress: () => deleteEvent(event._id), // Call delete function
-                    },
-                  ]
-                );
-              }}
-            />
-          </View>
-        ))
-      ) : (
-        <Text style={styles.noEventsText}>No events found.</Text>
-      )}
-    </ScrollView>
+              <View style={styles.cardInfo}>
+                <View style={styles.cardDetails}>
+                  <Text style={styles.cardTitle} numberOfLines={1}>
+                    {event.title}
+                  </Text>
+                  <Text style={styles.cardCity}>{event.city}</Text>
+                  <Text style={styles.cardDate}>
+                    {new Date(event.date).toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </Text>
+                </View>
+                <Text style={styles.cardPrice}>{event.price}$</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: "#111111",
+  },
+  headerWrapper: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 40,
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  searchBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#1E1C21",
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
     marginTop: 20,
-    textAlign: 'center',
   },
-  eventCard: {
-    backgroundColor: '#fff',
+  searchInput: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    flex: 1,
+  },
+  newEventButton: {
+    backgroundColor: "#CAFD00",
     borderRadius: 10,
-    padding: 15,
+    paddingVertical: 12,
+    alignItems: "center",
+    marginTop: 20,
+  },
+  newEventText: {
+    fontWeight: "bold",
+    color: "#111",
+    fontSize: 16,
+  },
+  subtitle: {
+    color: "#FFFFFF",
+    fontSize: 12,
+    textAlign: "center",
+    marginVertical: 15,
+  },
+  gridWrapper: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
+  card: {
+    width: "48%",
+    borderRadius: 10,
     marginBottom: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
   },
-  eventTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  eventDescription: {
-    fontSize: 14,
-    marginBottom: 10,
-    color: '#333',
-  },
-  eventPrice: {
-    fontSize: 14,
-    marginBottom: 10,
-    color: '#333',
-  },
-  eventImage: {
-    width: '100%',
-    height: 200,
+  image: {
+    width: "100%",
+    height: 220,
     borderRadius: 10,
   },
-  noEventsText: {
-    textAlign: 'center',
-    color: '#999',
+  cardInfo: {
+    padding: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+  cardDetails: {
+    flexShrink: 1,
+  },
+  cardTitle: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  cardCity: {
+    fontSize: 12,
+    color: "#CCCCCC",
+    marginTop: 2,
+  },
+  cardDate: {
+    fontSize: 12,
+    color: "#AAAAAA",
+    marginTop: 2,
+  },
+  cardPrice: {
+    fontSize: 12,
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    marginLeft: 10,
+  },
+  stickyHeader: {
+    backgroundColor: "#111111",
+    paddingBottom: 10,
+  },
+  fixedHeader: {
+    backgroundColor: "#111111",
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    paddingBottom: 10,
+    zIndex: 10,
+  },
+
+  scrollArea: {
+    flex: 1,
+    paddingHorizontal: 20,
   },
 });
